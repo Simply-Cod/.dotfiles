@@ -57,8 +57,8 @@ local keymap = vim.keymap.set
 keymap("n", "<C-e>", "<cmd>20Lexplore<CR>", { silent = true, desc = "netrw file explorer" })
 keymap('n', '<leader>cd', ':cd %:p:h<CR>', { noremap = true, silent = true, desc = "Change Directory" })
 
-keymap("n", "<C-q>", "<cmd>quit<CR>", {desc = "quit"})
-keymap("n", "<C-s>", "<cmd>write<CR>", {desc = "Write"})
+keymap("n", "<leader>q", "<cmd>quit<CR>", {desc = "quit"})
+keymap("n", "<leader>w", "<cmd>write<CR>", {desc = "Write"})
 
 keymap("n", "<C-d>", "<C-d>zz", { silent = true })
 keymap("n", "<C-u>", "<C-u>zz", { silent = true })
