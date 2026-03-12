@@ -58,7 +58,8 @@ keymap("n", "<C-e>", "<cmd>20Lexplore<CR>", { silent = true, desc = "netrw file 
 keymap('n', '<leader>cd', ':cd %:p:h<CR>', { noremap = true, silent = true, desc = "Change Directory" })
 
 keymap("n", "<leader>q", "<cmd>quit<CR>", {desc = "quit"})
-keymap("n", "<leader>w", "<cmd>write<CR>", {desc = "Write"})
+keymap("n", "<leader>w", "<cmd>write<CR>", {desc = "Write"})'
+keymap("n", "<Tab>", "<C-6>")
 
 keymap("n", "<C-d>", "<C-d>zz", { silent = true })
 keymap("n", "<C-u>", "<C-u>zz", { silent = true })
@@ -204,9 +205,9 @@ require("lazy").setup{
 --- Lsp -----------------------------------------
 
 -------------------------------------------------
-vim.lsp.enable("clangd")
-vim.lsp.enable("lua_ls")
-vim.lsp.enable("rust_analyzer")
+-- vim.lsp.enable("clangd")
+-- vim.lsp.enable("lua_ls")
+-- vim.lsp.enable("rust_analyzer")
 
 --- Diagnosticts --------------------------------
 
