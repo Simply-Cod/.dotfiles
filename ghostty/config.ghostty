@@ -1,0 +1,12 @@
+
+window-width = 100
+window-height = 30
+
+theme = No Clown Fiesta
+
+background-opacity = 0.90
+
+gtk-titlebar = false
+gtk-custom-css = ./custom.css
+
+mouse-hide-while-typing = true
