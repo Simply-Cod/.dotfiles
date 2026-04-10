@@ -133,6 +133,27 @@ require("mason").setup {}
 vim.lsp.enable("clangd")
 vim.lsp.enable("lua_ls")
 
+
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'go',
+  callback = function(args)
+
+    vim.cmd('syntax off')
+    
+    vim.lsp.start({
+      name = 'gopls',
+      cmd = {'gopls'},
+      root_dir = vim.fs.root(args.buf, {'go.mod', '.git'}),
+      settings = {
+        gopls = {
+          ["ui.semanticTokens"] = true,         
+        },
+      },
+    })
+  end,
+})
+
+
 --- Completions ---------------------------------
 --- You will need rust and cargo to build plugin in ~/.local/share/nvim/site/pack/core/opt/blink.cmp/
 --- run 'cargo build --release' in said directory
