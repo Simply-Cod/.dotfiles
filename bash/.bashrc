@@ -1,6 +1,17 @@
 
 export EDITOR="nvim"
 export SUDO_EDITOR="nvim"
+export MANPAGER='nvim +Man!'
+
+# Search manpages with fzf
+mans() {
+    man -k . | fzf \
+        --preview "echo {} | awk '{print \$1}' | xargs man" \
+        --preview-window=right:70% \
+        --height 100% | \
+        awk '{print $1}' | xargs -r man
+}
+
 
 alias lg="lazygit"
 
