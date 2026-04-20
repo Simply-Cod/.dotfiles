@@ -7,6 +7,17 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' 'm:{A-Z}={a-z}'
 
 export EDITOR="nvim"
 export SUDO_EDITOR="nvim"
+export MANPAGER='nvim +Man!'
+
+# Search for man pages using fzf with preview
+mans() {
+    man -k . | fzf \
+        --preview "echo {} | awk '{print \$1}' | xargs man" \
+        --preview-window=right:70% \
+        --height 100% | \
+        awk '{print $1}' | xargs -r man
+}
+
 
 # --- eza (better ls) ---
 alias ls='eza -l --no-user --no-time --icons'
