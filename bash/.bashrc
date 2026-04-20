@@ -3,10 +3,10 @@ export EDITOR="nvim"
 export SUDO_EDITOR="nvim"
 export MANPAGER='nvim +Man!'
 
-# Search manpages with fzf
+# Search manpages. requires fzf and bat
 mans() {
     man -k . | fzf \
-        --preview "echo {} | awk '{print \$1}' | xargs man" \
+        --preview "echo {} | awk '{print \$1}' | xargs man | col -bx | bat -l man -p --color=always" \
         --preview-window=right:70% \
         --height 100% | \
         awk '{print $1}' | xargs -r man
