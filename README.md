@@ -16,4 +16,11 @@
 - starship
 - eza
 - zoxide
+- fzf
+- tmux
+- ghostty
+
+## Nice to have
+- lowfi
+- ripgrep
 
