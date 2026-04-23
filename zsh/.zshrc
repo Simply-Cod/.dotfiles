@@ -9,6 +9,8 @@ export EDITOR="nvim"
 export SUDO_EDITOR="nvim"
 export MANPAGER='nvim +Man!'
 
+export BAT_THEME="Nord"
+
 # Search for man pages, requires fzf and bat
 mans() {
     man -k . | fzf \
